@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Muestreo Científico</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons para iconografía moderna -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .bg-pattern {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-pattern min-h-screen flex items-center justify-center py-10 px-4">
+
+    <div class="max-w-4xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200">
+        
+        <!-- ENCABEZADO -->
+        <header class="bg-slate-900 text-white p-10 relative overflow-hidden">
+            <div class="absolute top-0 right-0 opacity-10 transform translate-x-1/4 -translate-y-1/4 text-9xl">
+                <i class="ph-fill ph-chart-polar"></i>
+            </div>
+            <div class="relative z-10">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-600 text-blue-100 text-xs font-bold tracking-widest uppercase mb-4">Metodología de la Investigación</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-2">Determinación de la Muestra</h1>
+                <p class="text-lg text-slate-300 font-light max-w-2xl">Guía práctica para identificar el tipo de población y calcular el tamaño representativo necesario para garantizar la validez científica.</p>
+            </div>
+        </header>
+
+        <!-- SECCIÓN 1: TIPOS DE POBLACIÓN -->
+        <div class="p-8 md:p-10">
+            <h2 class="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-3 justify-center text-center">
+                <i class="ph-duotone ph-users-three text-blue-600 text-3xl"></i>
+                Paso 1: Identificar la Naturaleza Poblacional
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+                <!-- Línea divisoria en desktop -->
+                <div class="hidden md:block absolute top-0 bottom-0 left-1/2 w-px bg-slate-200 transform -translate-x-1/2"></div>
+
+                <!-- POBLACIÓN INFINITA -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:shadow-lg transition-shadow relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 text-7xl text-slate-200 opacity-50 z-0">
+                        <i class="ph-duotone ph-infinity"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-3xl mb-4 shadow-sm">
+                            <i class="ph-bold ph-infinity"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Población Infinita</h3>
+                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                            El conjunto de unidades es incalculable, o su número total (<span class="font-serif italic font-bold">N</span>) es desconocido. Prácticamente, suele asumirse al superar los 100,000 elementos.
+                        </p>
+                        <div class="bg-white p-4 rounded-xl border border-indigo-100 shadow-sm">
+                            <h4 class="text-xs font-bold text-indigo-800 uppercase tracking-wide mb-2 flex items-center gap-2">
+                                <i class="ph-fill ph-math-operations"></i> Implicación Matemática
+                            </h4>
+                            <p class="text-sm text-slate-700 leading-tight">
+                                La ecuación <strong>no utiliza el parámetro <span class="font-serif italic">N</span></strong>. El tamaño depende solo de la varianza poblacional, nivel de confianza y margen de error.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POBLACIÓN FINITA -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:shadow-lg transition-shadow relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 text-7xl text-slate-200 opacity-50 z-0">
+                        <i class="ph-duotone ph-bounding-box"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-3xl mb-4 shadow-sm">
+                            <i class="ph-bold ph-users"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Población Finita</h3>
+                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                            Es un conjunto delimitado y contable. El investigador <strong>conoce con exactitud</strong> el número total de elementos (<span class="font-serif italic font-bold">N</span>) que la componen.
+                        </p>
+                        <div class="bg-white p-4 rounded-xl border border-emerald-100 shadow-sm">
+                            <h4 class="text-xs font-bold text-emerald-800 uppercase tracking-wide mb-2 flex items-center gap-2">
+                                <i class="ph-fill ph-math-operations"></i> Implicación Matemática
+                            </h4>
+                            <p class="text-sm text-slate-700 leading-tight">
+                                La fórmula incorpora <span class="font-serif italic">N</span> para aplicar un <strong>factor de corrección por finitud</strong>, lo que ajusta y optimiza el tamaño de la muestra final (<span class="font-serif italic">n</span>).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIVISOR -->
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+
+        <!-- SECCIÓN 2: LA CALCULADORA -->
+        <div class="p-8 md:p-10 bg-white">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                
+                <div class="w-full md:w-1/3 flex justify-center">
+                    <div class="w-48 h-48 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-full flex items-center justify-center shadow-inner border-4 border-white border-opacity-50">
+                        <i class="ph-duotone ph-calculator text-8xl text-blue-600 drop-shadow-md"></i>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-2xl font-bold text-slate-800 mb-2">Paso 2: Calcular con Rigor</h2>
+                    <p class="text-slate-600 mb-6">La <strong>Calculadora de Muestreo Científico</strong> ejecuta el modelo matemático unidimensional. ¿Qué hace estrictamente esta herramienta?</p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 bg-green-100 text-green-600 rounded-full p-1"><i class="ph-bold ph-check text-sm"></i></div>
+                            <div>
+                                <span class="font-bold text-slate-800 block">Cálculo del tamaño mínimo (<span class="font-serif italic">n</span>)</span>
+                                <span class="text-sm text-slate-600">Entrega el número preciso de unidades para garantizar la significancia estadística.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 bg-green-100 text-green-600 rounded-full p-1"><i class="ph-bold ph-check text-sm"></i></div>
+                            <div>
+                                <span class="font-bold text-slate-800 block">Configuración de Confianza (<span class="font-serif italic">Z</span>)</span>
+                                <span class="text-sm text-slate-600">Opciones estándar: 90% (1.645), 95% (1.96), 99% (2.576) o valor personalizado.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 bg-green-100 text-green-600 rounded-full p-1"><i class="ph-bold ph-check text-sm"></i></div>
+                            <div>
+                                <span class="font-bold text-slate-800 block">Ajuste de Margen de Error</span>
+                                <span class="text-sm text-slate-600">Define porcentualmente el límite de error de estimación tolerado.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 bg-green-100 text-green-600 rounded-full p-1"><i class="ph-bold ph-check text-sm"></i></div>
+                            <div>
+                                <span class="font-bold text-slate-800 block">Transparencia Metodológica</span>
+                                <span class="text-sm text-slate-600">Exhibe la estructura matemática del modelo para verificación empírica.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER & CALL TO ACTION -->
+        <div class="bg-slate-50 border-t border-slate-200 p-8 md:p-10 flex flex-col items-center text-center">
+            
+            <div class="max-w-2xl bg-white p-6 rounded-2xl border-l-4 border-amber-500 shadow-sm mb-8 relative">
+                <i class="ph-fill ph-quotes absolute -top-4 -left-3 text-4xl text-amber-200 bg-white rounded-full"></i>
+                <p class="text-slate-700 italic font-medium relative z-10 text-lg">
+                    "El cálculo debe ser a priori. Hacerlo post-hoc carece de valor científico y ético."
+                </p>
+            </div>
+
+            <a href="https://juansanher25.github.io/Cauantitativa2/" target="_blank" class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-blue-600 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 hover:bg-blue-700 hover:shadow-lg hover:-translate-y-1">
+                <span class="flex items-center gap-2">
+                    <i class="ph-bold ph-arrow-square-out text-xl"></i>
+                    Abrir Calculadora Científica
+                </span>
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Ph.D. Juan Sandoval Herrera | Herramienta Académica</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
